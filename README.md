@@ -6,7 +6,7 @@
 项目架构后端：
 ![Meoan架构](https://github.com/dengxijuli/mepan/assets/132116099/e567e35e-72e3-4f03-938c-68ae4e09c5e4)
 
-前端：
+技术架构：
 
 ![Mepan技术](https://github.com/dengxijuli/mepan/assets/132116099/9a83b51a-3480-4922-b994-f1d30321071a)
 
