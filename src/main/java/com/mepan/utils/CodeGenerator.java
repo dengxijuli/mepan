@@ -16,13 +16,15 @@ import java.util.Collections;
  */
 public class CodeGenerator {
 
-    private static String url = "jdbc:mysql://192.168.88.128:3306/mepan?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true";
+    private static String url = "jdbc:mysql://localhost:3306/fresh?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true";
     private static String username = "root";
     private static String password = "Dxjl1314@";
 
+    private static String password1 = "a";
+
 
     public static void main(String[] args) {
-        FastAutoGenerator.create(url, username, password)
+        FastAutoGenerator.create(url, username, password1)
                 .globalConfig(builder -> {
                     builder.author("dx") // 设置作者
                             .enableSwagger() // 开启 swagger 模式
@@ -43,7 +45,7 @@ public class CodeGenerator {
                             .pathInfo(Collections.singletonMap(OutputFile.xml, "E:\\java\\mepan\\src\\main\\resources\\mapper\\")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
-                    builder.addInclude("file_share") // 设置需要生成的表名
+                    builder.addInclude("t_account_transaction") // 设置需要生成的表名
                             .addTablePrefix("t_", "c_"); // 设置过滤表前缀
                 })
                 .templateEngine(new FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板

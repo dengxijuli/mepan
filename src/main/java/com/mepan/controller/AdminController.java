@@ -4,6 +4,7 @@ import com.mepan.annotation.GlobalInterceptor;
 import com.mepan.annotation.VerifyParam;
 import com.mepan.component.RedisComponent;
 import com.mepan.entity.dto.SysSettingsDto;
+import com.mepan.entity.po.UserInfo;
 import com.mepan.entity.query.FileInfoQuery;
 import com.mepan.entity.query.UserInfoQuery;
 import com.mepan.entity.vo.PaginationResultVO;
@@ -57,7 +58,7 @@ public class AdminController extends CommonFileController {
     @GlobalInterceptor(checkParams = true, checkAdmin = true)
     public ResponseVO loadUser(UserInfoQuery userInfoQuery) {
         userInfoQuery.setOrderBy("join_time desc");
-        PaginationResultVO resultVO = iUserInfoService.findListByPage(userInfoQuery);
+        PaginationResultVO<UserInfo> resultVO = iUserInfoService.findListByPage(userInfoQuery);
         return getSuccessResponseVO(convert2PaginationVO(resultVO, UserInfoVO.class));
     }
 

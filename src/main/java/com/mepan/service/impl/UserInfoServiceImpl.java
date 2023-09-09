@@ -64,7 +64,7 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
 
     @Override
     public List<UserInfo> findListByParam(UserInfoQuery userInfoQuery) {
-        return null;
+        return userInfoMapper.findListByParam(userInfoQuery);
     }
 
 
@@ -218,7 +218,7 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
         SimplePage page = new SimplePage(param.getPageNo(), count, pageSize);
         param.setSimplePage(page);
         List<UserInfo> list = this.findListByParam(param);
-        PaginationResultVO<UserInfo> result = new PaginationResultVO(count, page.getPageSize(), page.getPageNo(), page.getPageTotal(), list);
+        PaginationResultVO<UserInfo> result = new PaginationResultVO<UserInfo>(count, page.getPageSize(), page.getPageNo(), page.getPageTotal(), list);
         return result;
     }
 

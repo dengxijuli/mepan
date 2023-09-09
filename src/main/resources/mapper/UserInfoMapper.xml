@@ -67,6 +67,13 @@
             <include refid="base_condition_filed"/>
         </where>
     </sql>
+    <!-- 通用查询结果列-->
+    <sql id="base_column_list">
+        user_id
+        ,nick_name,email,qq_open_id,qq_avatar,
+		 password,join_time,last_login_time,status,use_space,
+		 total_space
+    </sql>
 
     <!-- 通用查询条件列-->
     <sql id="query_condition">
@@ -125,5 +132,18 @@
     <select id="selectCountByParam" resultType="java.lang.Integer">
         SELECT count(1) FROM user_info
         <include refid="query_condition"/>
+    </select>
+    <!-- 查询集合-->
+    <select id="findListByParam" resultType="com.mepan.entity.po.UserInfo">
+        SELECT
+        <include refid="base_column_list"/>
+        FROM user_info
+        <include refid="query_condition"/>
+        <if test="query.orderBy!=null">
+            order by ${query.orderBy}
+        </if>
+        <if test="query.simplePage!=null">
+            limit #{query.simplePage.start},#{query.simplePage.end}
+        </if>
     </select>
 </mapper>

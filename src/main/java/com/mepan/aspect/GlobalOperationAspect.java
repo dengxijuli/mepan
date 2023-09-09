@@ -35,7 +35,7 @@ import java.util.List;
 @Aspect
 public class GlobalOperationAspect {
 
-    private static Logger logger = LoggerFactory.getLogger(GlobalOperationAspect.class);
+    private static final Logger logger = LoggerFactory.getLogger(GlobalOperationAspect.class);
     private static final String TYPE_STRING = "java.lang.String";
     private static final String TYPE_INTEGER = "java.lang.Integer";
     private static final String TYPE_LONG = "java.lang.Long";
