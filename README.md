@@ -2,7 +2,7 @@
 ## 提示：
 采用前后端分离，这里主要是后端代码，需要配合前端代码，才能完整正常运行
 
-线上体验地址：http://dxjl.site
+线上体验地址：http://www.dxjl.site
 
 ## 项目架构后端：
 ![Meoan架构](https://github.com/dengxijuli/mepan/assets/132116099/e567e35e-72e3-4f03-938c-68ae4e09c5e4)
